@@ -7,12 +7,12 @@ Console.WriteLine("Prochaines étapes : implémentez les fonctionnalités dans d
 Console.WriteLine("\n=== Menu Principal ===");
 Console.WriteLine("Implémentez le menu du programme dans feature/menu");
 Console.ReadKey(true);
-var manager = new QuoteManager();
 string path = "citations.csv";
 
 static void ShowRandomQuote(QuoteManager manager)
 {
-    Console.WriteLine("[Simulation] Une citation aléatoire s’afficherait ici.");
+    //Console.WriteLine("[Simulation] Une citation aléatoire s’afficherait ici.");
+    Console.WriteLine(manager.GetRandomQuote());
     // Exemple futur : Console.WriteLine(manager.GetRandomQuote());
 }
 

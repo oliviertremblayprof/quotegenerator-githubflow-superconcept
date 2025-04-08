@@ -11,13 +11,13 @@ namespace QuoteMachineTests
             _manager = new QuoteManager();
         }
 
-        //[Fact]
-        //public void GetRandomQuote_ShouldReturnNonNullQuote()
-        //{
-        //    var quote = _manager.GetRandomQuote();
-        //    Assert.NotNull(quote);
-        //    Assert.IsType<Quote>(quote);
-        //}
+        [Fact]
+        public void GetRandomQuote_ShouldReturnNonNullQuote()
+        { 
+            var quote = _manager.GetRandomQuote();
+          Assert.NotNull(quote);
+          Assert.IsType<Quote>(quote);
+        }
 
         //[Fact]
         //public void AddQuote_ShouldIncreaseQuoteCount()
@@ -53,7 +53,7 @@ namespace QuoteMachineTests
         //    File.WriteAllLines(path, new[]
         //    {
         //    "Le test est la preuve,Professeur X",
-        //    "Programmer, c’est penser deux fois,Alan Kay"
+        //    "Programmer, cï¿½est penser deux fois,Alan Kay"
         //    });
 
         //    _manager.LoadFromCSVFile(path);
