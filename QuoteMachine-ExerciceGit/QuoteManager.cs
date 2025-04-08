@@ -26,7 +26,11 @@ namespace QuoteMachine_ExerciceGit
             //GetRandomQuote_ShouldReturnNonNullQuote
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
-            throw new NotImplementedException("À implémenter dans feature/random-quote");
+           Random rnd = new Random();
+
+           Quote rndQuote = _quotes[rnd.Next(_quotes.Count)];
+
+           return rndQuote;
         }
 
         public void AddQuote(string text, string author)
