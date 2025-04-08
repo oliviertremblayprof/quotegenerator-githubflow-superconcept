@@ -24,6 +24,7 @@ namespace QuoteMachine_ExerciceGit
         {
             //Avant de commencer, décommenter le test suivant:
             //GetRandomQuote_ShouldReturnNonNullQuote
+           
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
             throw new NotImplementedException("À implémenter dans feature/random-quote");
