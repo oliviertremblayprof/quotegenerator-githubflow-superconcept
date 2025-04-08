@@ -20,6 +20,7 @@ var manager = new QuoteManager();
 
 switch (choix)
 {
+    //
     case 1:
         Console.WriteLine("=== La citation alétoire récupéré === \n");
         ShowRandomQuote(manager);
