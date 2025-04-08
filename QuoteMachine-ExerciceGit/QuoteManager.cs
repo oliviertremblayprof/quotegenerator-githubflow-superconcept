@@ -57,7 +57,11 @@ namespace QuoteMachine_ExerciceGit
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
 
-            throw new NotImplementedException("À implémenter dans feature/load-from-file");
+            if (!IsCSVFile(path))
+            {
+                throw new QuoteFileException("Erreur lors de la sauvegarde : le fichier doit avoir l'extension .csv");
+            }
+
         }
 
         public List<Quote> GetAllQuotes()

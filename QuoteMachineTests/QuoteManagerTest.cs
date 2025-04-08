@@ -74,16 +74,16 @@ namespace QuoteMachineTests
         //    Assert.Contains("Erreur lors du chargement : le fichier n'existe pas", ex.Message);
         //}
 
-        //[Fact]
-        //public void LoadFromFile_ShouldThrowIfNotInCSVExtension()
-        //{
-        //    var path = "fichier_non_csv.txt";
-        //    File.WriteAllLines(path, new[] { "" });
+        [Fact]
+        public void LoadFromFile_ShouldThrowIfNotInCSVExtension()
+        {
+            var path = "fichier_non_csv.txt";
+            File.WriteAllLines(path, new[] { "" });
 
-        //    var ex = Assert.Throws<QuoteFileException>(() => _manager.LoadFromCSVFile(path));
-        //    Assert.Contains("Erreur lors de la sauvegarde : le fichier doit avoir l'extension .csv", ex.Message);
+            var ex = Assert.Throws<QuoteFileException>(() => _manager.LoadFromCSVFile(path));
+            Assert.Contains("Erreur lors de la sauvegarde : le fichier doit avoir l'extension .csv", ex.Message);
 
-        //    File.Delete(path);
-        //}
+            File.Delete(path);
+        }
     }
 }
