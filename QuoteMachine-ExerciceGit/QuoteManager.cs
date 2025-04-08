@@ -64,7 +64,19 @@ namespace QuoteMachine_ExerciceGit
             try
             {
                 StreamReader streamReader = new StreamReader(path);
-                string[] quotesImporter = streamReader.ReadToEnd().Split("\r");
+                string[] quotesImporter = streamReader.ReadToEnd().Replace("\n", "").Split("\r");
+
+                foreach (string fQuote in quotesImporter)
+                {
+                    if (!string.IsNullOrEmpty(fQuote))
+                    {
+                        string[] infoQuote = fQuote.Split(",");
+                        Quote nouvelleQuote = new Quote() { Text = infoQuote[0] , Author = infoQuote[1] };
+                        _quotes.Add(nouvelleQuote);
+                    }
+                }
+
+                streamReader.Close();
             }
             catch (FileNotFoundException)
             {

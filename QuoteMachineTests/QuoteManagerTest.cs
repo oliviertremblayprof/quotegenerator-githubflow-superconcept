@@ -46,24 +46,24 @@ namespace QuoteMachineTests
         //    Assert.Contains("Erreur lors de la sauvegarde : le fichier doit avoir l'extension .csv", ex.Message);
         //}
 
-        //[Fact]
-        //public void LoadFromFile_ShouldAppendQuotesToList()
-        //{
-        //    var path = "test_quotes.csv";
-        //    File.WriteAllLines(path, new[]
-        //    {
-        //    "Le test est la preuve,Professeur X",
-        //    "Programmer, c’est penser deux fois,Alan Kay"
-        //    });
+        [Fact]
+        public void LoadFromFile_ShouldAppendQuotesToList()
+        {
+            var path = "test_quotes.csv";
+            File.WriteAllLines(path, new[]
+            {
+            "Programmer, c’est penser deux fois,Alan Kay",
+            "Le test est la preuve,Professeur X",
+            });
 
-        //    _manager.LoadFromCSVFile(path);
-        //    var allQuotes = _manager.GetAllQuotes();
+            _manager.LoadFromCSVFile(path);
+            var allQuotes = _manager.GetAllQuotes();
 
-        //    Assert.Equal("Le test est la preuve", allQuotes.LastOrDefault(new Quote()).Text);
-        //    Assert.Equal("Professeur X", allQuotes.LastOrDefault(new Quote()).Author);
+            Assert.Equal("Le test est la preuve", allQuotes.LastOrDefault(new Quote()).Text);
+            Assert.Equal("Professeur X", allQuotes.LastOrDefault(new Quote()).Author);
 
-        //    File.Delete(path);
-        //}
+            File.Delete(path);
+        }
 
         [Fact]
         public void LoadFromFile_ShouldThrowIfFileMissing()
