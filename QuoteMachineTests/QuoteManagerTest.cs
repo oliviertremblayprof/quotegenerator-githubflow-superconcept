@@ -65,14 +65,14 @@ namespace QuoteMachineTests
         //    File.Delete(path);
         //}
 
-        //[Fact]
-        //public void LoadFromFile_ShouldThrowIfFileMissing()
-        //{
-        //    var path = "fichier_inexistant.csv";
+        [Fact]
+        public void LoadFromFile_ShouldThrowIfFileMissing()
+        {
+            var path = "fichier_inexistant.csv";
 
-        //    var ex = Assert.Throws<QuoteFileException>(() => _manager.LoadFromCSVFile(path));
-        //    Assert.Contains("Erreur lors du chargement : le fichier n'existe pas", ex.Message);
-        //}
+            var ex = Assert.Throws<QuoteFileException>(() => _manager.LoadFromCSVFile(path));
+            Assert.Contains("Erreur lors du chargement : le fichier n'existe pas", ex.Message);
+        }
 
         [Fact]
         public void LoadFromFile_ShouldThrowIfNotInCSVExtension()

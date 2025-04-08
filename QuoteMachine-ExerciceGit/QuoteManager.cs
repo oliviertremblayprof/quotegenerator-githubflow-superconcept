@@ -53,13 +53,22 @@ namespace QuoteMachine_ExerciceGit
             //Avant de commencer, décommenter les tests suivants:
             //LoadFromFile_ShouldAppendQuotesToList
             //LoadFromFile_ShouldThrowIfFileMissing
-            //LoadFromFile_ShouldThrowIfNotInCSVExtension
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
 
             if (!IsCSVFile(path))
             {
                 throw new QuoteFileException("Erreur lors de la sauvegarde : le fichier doit avoir l'extension .csv");
+            }
+
+            try
+            {
+                StreamReader streamReader = new StreamReader(path);
+                string[] quotesImporter = streamReader.ReadToEnd().Split("\r");
+            }
+            catch (FileNotFoundException)
+            {
+                throw new QuoteFileException("\"Erreur lors du chargement : le fichier n'existe pas\"");
             }
 
         }
